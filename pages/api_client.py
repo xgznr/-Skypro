@@ -1,13 +1,13 @@
 import requests
 import allure
-from data.config import BASE_URL_UI, HEADERS
+from data.config import BASE_URL_API, HEADERS
 
 
 class KinopoiskAPI:
     def __init__(self):
         self.session = requests.Session()
         self.session.headers.update(HEADERS)
-        self.base_url = BASE_URL_UI
+        self.base_url = BASE_URL_API
 
     @allure.step("Отправить GET запрос на {path}")
     def _get(self, path, params=None):
